@@ -1,18 +1,18 @@
 @import "ui-variables";
-@tab-radius: 3px;
+@tab-radius: 0px;
 @modified-icon-width: 8px;
-@tab-skew: 30deg;
+@tab-skew: 0deg;
 @tab-top-padding: 5px;
-@tab-bottom-border-height: 5px;
+@tab-bottom-border-height: 0px;
 @tab-border: 1px solid @tab-border-color;
-@tab-bar-bottom-border-color: #111;
+@tab-bar-bottom-border-color: #0D141A;
 @tab-max-width: 160px;
 
 .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   background: @tab-bar-background-color;
-  box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 10px 0 25px;
+  // box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
+  // padding: 0 10px 0 25px;
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -47,7 +47,7 @@
     border: none;
 
     &, &:before, &:after {
-      background-image: -webkit-linear-gradient(top, lighten(#333, 7%), #333);
+      // background-image: -webkit-linear-gradient(top, lighten(#333, 7%), #333);
       height: @tab-height;
     }
 
@@ -108,7 +108,7 @@
   .tab.active {
     z-index: 1;
     color: @text-color-highlight;
-    box-shadow: inset -1px 1px 0 @tab-border-color, 4px -4px 4px rgba(0,0,0,.1);
+    // box-shadow: inset -1px 1px 0 @tab-border-color, 4px -4px 4px rgba(0,0,0,.1);
 
     .close-icon {
       line-height: @tab-height - 1px;
@@ -116,7 +116,7 @@
     }
 
     &, &:before, &:after {
-      background-image: -webkit-linear-gradient(top, lighten(@tab-background-color-active, 7%), @tab-background-color-active);
+      background-color: @tab-background-color-active;
       height: @tab-height + 1px;
     }
 
@@ -149,4 +149,30 @@
       top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
     }
   }
+}
+
+.tab-size(@size) {
+    height: @size;
+
+    .tab {
+        height: @size;
+        line-height: @size;
+
+        .close-icon {
+            line-height: @size;
+
+            &::before {
+                line-height: @size;
+            }
+        }
+        &.modified:not(:hover) .close-icon {
+            top: calc(50% - 5px);
+        }
+    }
+}
+.tab-size-small .tab-bar {
+    .tab-size(32px);
+}
+.tab-size-big .tab-bar {
+    .tab-size(64px);
 }
