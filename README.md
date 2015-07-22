@@ -13,7 +13,7 @@ Blue Sea comes with settings. Right now you can change the UI's font size. More 
 
 ## Additional Packages
 
-* [language-javascript-semantic](https://atom.io/packages/language-javascript-semantic) for the syntax highlighting like you can see in the screenshot.
+* [language-javascript-semantic](https://atom.io/packages/language-javascript-semantic) for the syntax highlighting like you can see in the screenshot. Note: due to problems with (auto) indentaion you can use it on your own risk. It won't break anything, it just won't look that good. :)
 
 
 ##Installation
